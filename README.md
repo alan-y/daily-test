@@ -1,1 +1,2 @@
 # daily-test
+[![.github/workflows/run-import.yaml](https://github.com/alan-y/daily-test/actions/workflows/run-import.yaml/badge.svg)](https://github.com/alan-y/daily-test/actions/workflows/run-import.yaml)
