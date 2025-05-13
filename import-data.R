@@ -34,10 +34,13 @@ vwrp_df2 <- rbind(
 
 # Change in price
 vwrp_df2$change <- vwrp_df2$VWRP.L.Close[1] - vwrp_df2$VWRP.L.Close
-vwrp_df2$change <- round(vwrp_df2$change, 2)
+vwrp_df2$change <- formatC(vwrp_df2$change, digits = 2, format = "f")
 vwrp_df2$changep <- vwrp_df2$VWRP.L.Close[1]/vwrp_df2$VWRP.L.Close - 1
-vwrp_df2$changep <- round(vwrp_df2$changep * 100, 1)
-vwrp_df2$VWRP.L.Close <- round(vwrp_df2$VWRP.L.Close, 2)
+vwrp_df2$changep <- formatC(vwrp_df2$changep * 100, digits = 1, format = "f")
+vwrp_df2$VWRP.L.Close <- formatC(vwrp_df2$VWRP.L.Close, digits = 2, format = "f")
+vwrp_df2$VWRP.L.Close <- paste0("£", vwrp_df2$VWRP.L.Close)
+vwrp_df2$change <- paste0("£", vwrp_df2$change)
+vwrp_df2$changep <- paste0(vwrp_df2$changep, "%")
 
 # Export
 names(vwrp_df2) <- c("Date", "Price", "Change", "Percent Change")
