@@ -41,6 +41,7 @@ vwrp_df2$VWRP.L.Close <- formatC(vwrp_df2$VWRP.L.Close, digits = 2, format = "f"
 vwrp_df2$VWRP.L.Close <- paste0("£", vwrp_df2$VWRP.L.Close)
 vwrp_df2$change <- paste0("£", vwrp_df2$change)
 vwrp_df2$changep <- paste0(vwrp_df2$changep, "%")
+vwrp_df2$date <- format(vwrp_df2$date, "%d %b %Y")
 
 # Export
 names(vwrp_df2) <- c("Date", "Price", "Change", "Percent Change")
