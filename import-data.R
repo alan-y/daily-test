@@ -39,7 +39,7 @@ vwrp_df2$changep <- vwrp_df2$VWRP.L.Close[1] / vwrp_df2$VWRP.L.Close - 1
 
 # Change from peak price
 max_price <- max(vwrp_df$VWRP.L.Close, na.rm = TRUE)
-vwrp_df2$change_peak <- (max_price - vwrp_df2$VWRP.L.Close) / max_price
+vwrp_df2$change_peak <- (vwrp_df2$VWRP.L.Close - max_price) / max_price
 
 # Formatting
 vwrp_df2$date <- format(vwrp_df2$date, "%d %b %Y")
